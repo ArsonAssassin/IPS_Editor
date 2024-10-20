@@ -54,14 +54,14 @@ namespace IPS_Editor
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 var clickedEntry = ipsEntries[rowIndex];
 
-                var newEntry = new IPSEntry(clickedEntry.Offset +1, new byte[] { });
-                
-                    ipsEntries.Insert(rowIndex +1, newEntry);
+                var newEntry = new IPSEntry(clickedEntry.Offset + 1, new byte[] { });
 
-                    // Refresh both DataGridViews
-                    dataGridView1.Refresh();
-                    dataGridView2.Refresh();
-                
+                ipsEntries.Insert(rowIndex + 1, newEntry);
+
+                // Refresh both DataGridViews
+                dataGridView1.Refresh();
+                dataGridView2.Refresh();
+
             }
         }
         private void DataGridView_Scroll(object sender, ScrollEventArgs e)
@@ -246,6 +246,21 @@ namespace IPS_Editor
 
                 writer.Write("EOF".ToCharArray());
             }
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var data = ipsEntries[e.RowIndex];
+            using (RowEditForm form = new RowEditForm(data))
+            {
+                form.RowSaved += (s, args) => Form_RowSaved(s, args, e.RowIndex);
+                form.ShowDialog();
+            }
+        }
+
+        private void Form_RowSaved(object? sender, IPSEntrySavedArgs e, int rowIndex)
+        {
+            ipsEntries[rowIndex] = e.Data;
         }
     }
 }

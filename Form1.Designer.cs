@@ -78,6 +78,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(376, 458);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
             // dataGridView2
             // 
@@ -91,7 +92,7 @@
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 26);
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // Form1
             // 
