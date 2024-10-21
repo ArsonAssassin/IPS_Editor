@@ -104,14 +104,14 @@ namespace IPS_Editor
             dataGridView1.DataSource = bindingSource;
             dataGridView2.DataSource = bindingSource;
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            dataGridView1.Columns.Add(new DataGridViewColumn(new RichTextBoxCell())
             {
                 Name = "Offset",
                 DataPropertyName = "OffsetHex",
                 HeaderText = "Offset",
                 ReadOnly = false
             });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            dataGridView1.Columns.Add(new DataGridViewColumn(new RichTextBoxCell())
             {
                 Name = "Size",
                 DataPropertyName = "Size",
@@ -119,7 +119,7 @@ namespace IPS_Editor
                 Width = 40,
                 ReadOnly = false
             });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            dataGridView1.Columns.Add(new DataGridViewColumn(new RichTextBoxCell())
             {
                 Name = "HexValues",
                 DataPropertyName = "HexPreview",
@@ -127,14 +127,14 @@ namespace IPS_Editor
                 ReadOnly = false
             });
 
-            dataGridView2.Columns.Add(new DataGridViewTextBoxColumn
+            dataGridView2.Columns.Add(new DataGridViewColumn(new RichTextBoxCell())
             {
                 Name = "Offset",
                 DataPropertyName = "OffsetHex",
                 HeaderText = "Offset",
                 ReadOnly = false
             });
-            dataGridView2.Columns.Add(new DataGridViewTextBoxColumn
+            dataGridView2.Columns.Add(new DataGridViewColumn(new RichTextBoxCell())
             {
                 Name = "Size",
                 DataPropertyName = "Size",
@@ -142,7 +142,7 @@ namespace IPS_Editor
                 Width = 40,
                 ReadOnly = false
             });
-            dataGridView2.Columns.Add(new DataGridViewTextBoxColumn
+            dataGridView2.Columns.Add(new DataGridViewColumn(new RichTextBoxCell())
             {
                 Name = "TranslatedText",
                 DataPropertyName = "TranslatedPreview",

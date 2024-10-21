@@ -21,7 +21,7 @@ namespace IPS_Editor
 
             textBox1.Text = Entry.Offset.ToString();
             textBox2.Text = Entry.Size.ToString();
-            textBox3.Text = Entry.HexPreview;
+            richTextBox1.Text = Entry.HexPreview;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace IPS_Editor
         {
             var offset = int.Parse(textBox1.Text);
             Entry.Offset = offset;
-            Entry.UpdateFromHex(textBox3.Text.Replace("-", " "));
+            Entry.UpdateFromHex(richTextBox1.Text.Replace("-", " "));
             textBox2.Text = Entry.Size.ToString();
 
             IPSEntrySavedArgs args = new IPSEntrySavedArgs() { Data = Entry };

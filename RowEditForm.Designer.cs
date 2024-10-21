@@ -30,11 +30,11 @@
         {
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
             label2 = new Label();
+            richTextBox1 = new RichTextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -52,17 +52,6 @@
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(12, 52);
-            textBox3.MaximumSize = new Size(793, 368);
-            textBox3.MinimumSize = new Size(793, 368);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ScrollBars = ScrollBars.Vertical;
-            textBox3.Size = new Size(793, 368);
-            textBox3.TabIndex = 2;
             // 
             // button1
             // 
@@ -102,16 +91,24 @@
             label2.TabIndex = 6;
             label2.Text = "Size:";
             // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(12, 41);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(793, 379);
+            richTextBox1.TabIndex = 7;
+            richTextBox1.Text = "";
+            // 
             // RowEditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(817, 455);
+            Controls.Add(richTextBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "RowEditForm";
@@ -124,10 +121,10 @@
 
         private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
         private Button button1;
         private Button button2;
         private Label label1;
         private Label label2;
+        private RichTextBox richTextBox1;
     }
 }
